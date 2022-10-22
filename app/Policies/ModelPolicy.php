@@ -31,7 +31,7 @@ class ModelPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Test  $model
+     * @param  \App\Models\Division  $model
      * @param null $parent
      * @return \Illuminate\Auth\Access\Response|bool
      */
@@ -60,7 +60,7 @@ class ModelPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Test  $model
+     * @param  \App\Models\Division  $model
      * @param null $parent
      * @return \Illuminate\Auth\Access\Response|bool
      */
@@ -75,7 +75,7 @@ class ModelPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Test  $model
+     * @param  \App\Models\Division  $model
      * @param null $parent
      * @return \Illuminate\Auth\Access\Response|bool
      */
@@ -90,7 +90,7 @@ class ModelPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Test  $model
+     * @param  \App\Models\Division  $model
      * @param null $parent
      * @return \Illuminate\Auth\Access\Response|bool
      */
@@ -105,7 +105,7 @@ class ModelPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Test  $model
+     * @param  \App\Models\Division  $model
      * @param null $parent
      * @return \Illuminate\Auth\Access\Response|bool
      */
