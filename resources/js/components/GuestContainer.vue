@@ -43,7 +43,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <p class="text-center" style="color: rgb(217, 236, 255); font-size: 30px;">Good Morning {{guestName}}</p>
+                    <p class="text-center" style="color: rgb(217, 236, 255); font-size: 30px;">Hello {{guestName}}</p>
                     <p class="text-center" style="color: rgb(217, 236, 255); font-size: 30px;">Do you already know the person you want to meet?</p>
                     <div class="text-center">
                         <a @click.prevent="step++; knowPerson = true" class="btn btn-default btn-block" style="background-color: rgb(217, 236, 255)">Yes</a>
