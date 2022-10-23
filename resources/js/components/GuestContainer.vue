@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="text-center" style="margin: 100px 0 ;">
-                        <a @click.prevent="searchEmployee" class="btn btn-default btn-block" style="background-color: rgb(217, 236, 255)">Submit</a>
+                        <a @click.prevent="nextPurposeStep" class="btn btn-default btn-block" style="background-color: rgb(217, 236, 255)">Submit</a>
                     </div>
                 </div>
             </div>
@@ -81,12 +81,11 @@
                 <div class="col-md-10">
                     <div style="width: 100%">
                         <el-table
+                            ref="employeeTable"
                             :data="foundEmployee"
                             :show-header="false"
                             class="table table-hover"
-                            :cell-style="{
-                                backgroundColor: '#fff'
-                            }"
+                            highlight-current-row
                             style="width: 100%"
                             @row-click="selectEmployee"
                         >
@@ -179,14 +178,28 @@ export default {
             foundEmployee: [],
         }
     },
+    computed:{
+        selectedRow(){
+            console.log(this.foundEmployee.length)
+            if (this.foundEmployee.length && this.selectedEmployee){
+                return this.foundEmployee.map((datum) => datum.id).indexOf(this.selectedEmployee.id);
+            }
+            return null
+        }
+    },
     watch:{
       step(newVal, oldVal){
           if (!_.isEqual(newVal, oldVal)){
               if (newVal === 6){
                   setTimeout(()=>{
                       this.resetForm();
-                  }, 5000);
+                  }, 60000);
               }
+          }
+      },
+        foundEmployee(newVal, oldVal){
+          if (!_.isEqual(newVal, oldVal)){
+              this.$refs.employeeTable.setCurrentRow(this.selectedRow);
           }
       }
     },
@@ -200,9 +213,17 @@ export default {
             this.knowPerson =  false
             this.foundEmployee =  []
         },
-        selectEmployee(event){
-            if (event.office_status == 'in_office'){
-                this.selectedEmployee = event;
+        selectEmployee(row, column, event){
+            if (row.office_status == 'in_office'){
+                this.selectedEmployee = _.cloneDeep(row);
+                // this.step++;
+            }else{
+                toastr.options.progressbar = true;
+                toastr.warning('Employee Unavailable');
+            }
+        },
+        nextPurposeStep(){
+            if (this.selectedEmployee){
                 this.step++;
             }else{
                 toastr.options.progressbar = true;
