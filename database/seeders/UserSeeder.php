@@ -27,8 +27,8 @@ class UserSeeder extends Seeder
         }
 
         User::create([
-            'name'           => 'Employee 1',
-            'email'          => 'employee1@gmail.com',
+            'name'           => 'John Lotto',
+            'email'          => 'john_lotto@gmail.com',
             'password'       => bcrypt('password'),
             'remember_token' => Str::random(60),
             'role_id'        => 2,
@@ -36,8 +36,8 @@ class UserSeeder extends Seeder
             'office_status'  => 'in_office'
         ]);
         User::create([
-            'name'           => 'Employee 2',
-            'email'          => 'employee2@gmail.com',
+            'name'           => 'Yogha',
+            'email'          => 'yogha@gmail.com',
             'password'       => bcrypt('password'),
             'remember_token' => Str::random(60),
             'role_id'        => 2,
@@ -45,7 +45,34 @@ class UserSeeder extends Seeder
             'office_status'  => null
         ]);
         User::create([
-            'name'           => 'Secretary',
+            'name'           => 'Lukman',
+            'email'          => 'lukman@gmail.com',
+            'password'       => bcrypt('password'),
+            'remember_token' => Str::random(60),
+            'role_id'        => 2,
+            'division_id'    => 3,
+            'office_status'  => null
+        ]);
+        User::create([
+            'name'           => 'Kristina',
+            'email'          => 'kristina@gmail.com',
+            'password'       => bcrypt('password'),
+            'remember_token' => Str::random(60),
+            'role_id'        => 2,
+            'division_id'    => 3,
+            'office_status'  => null
+        ]);
+        User::create([
+            'name'           => 'Jihad',
+            'email'          => 'jihad@gmail.com',
+            'password'       => bcrypt('password'),
+            'remember_token' => Str::random(60),
+            'role_id'        => 2,
+            'division_id'    => 3,
+            'office_status'  => null
+        ]);
+        User::create([
+            'name'           => 'Devina',
             'email'          => 'secretary@gmail.com',
             'password'       => bcrypt('password'),
             'remember_token' => Str::random(60),
