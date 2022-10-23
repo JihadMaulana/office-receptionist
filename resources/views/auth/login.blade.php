@@ -52,11 +52,11 @@
                             </div>
                         </div>
 
-{{--                        <div class="row mb-0">--}}
-{{--                            <div class="col-md-8 offset-md-3" style="position: relative; horiz-align: center">--}}
-{{--                                <button type="submit" class="btn btn-primary">--}}
-{{--                                    {{ __('Login') }}--}}
-{{--                                </button>--}}
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-3" style="position: relative; horiz-align: center">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
 
 {{--                                @if (Route::has('password.request'))--}}
 {{--                                    <a class="btn btn-link" href="{{ route('password.request') }}" style="color: white">--}}
@@ -64,8 +64,8 @@
 {{--                                    </a>--}}
 {{--                                @endif--}}
 
-{{--                            </div>--}}
-{{--                        </div>--}}
+                            </div>
+                        </div>
 
                     </form>
                 </div>
