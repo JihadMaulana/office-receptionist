@@ -47,7 +47,7 @@
                     <p class="text-center" style="color: rgb(217, 236, 255); font-size: 30px;">Do you already know the person you want to meet?</p>
                     <div class="text-center">
                         <a @click.prevent="step++; knowPerson = true" class="btn btn-default btn-block" style="background-color: rgb(217, 236, 255)">Yes</a>
-                        <a @click.prevent="step = 6; knowPerson = false" class="btn btn-default btn-block" style="background-color: rgb(217, 236, 255)">No</a>
+                        <a @click.prevent="requestMeet()" class="btn btn-default btn-block" style="background-color: rgb(217, 236, 255)">No</a>
                     </div>
                 </div>
             </div>
@@ -232,7 +232,7 @@ export default {
                 requested_user_id: this.selectedEmployee && this.selectedEmployee.id || null,
                 guest_need: this.visitPurpose
             }).then(response => {
-                this.step++;
+                this.step = 6;
                 console.log(response);
                 return response
             }).catch((error) => {

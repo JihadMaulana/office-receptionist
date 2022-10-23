@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(60),
             'role_id'        => 2,
             'division_id'    => 2,
-            'office_status'  => null
+            'office_status'  => 'in_office'
         ]);
         User::create([
             'name'           => 'Employee 2',
@@ -51,7 +51,7 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(60),
             'role_id'        => 3,
             'division_id'    => 1,
-            'office_status'  => null
+            'office_status'  => 'in_office'
         ]);
         User::create([
             'name'           => 'Office Boy',

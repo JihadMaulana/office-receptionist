@@ -17,7 +17,7 @@ class CreateGuestRequestsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('requested_user_id')->nullable();
             $table->string('guest_name');
-            $table->string('guest_need');
+            $table->string('guest_need')->nullable();
             $table->text('servings')->nullable();
             $table->timestamps();
 
