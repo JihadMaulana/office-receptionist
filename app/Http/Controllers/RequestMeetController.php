@@ -36,7 +36,7 @@ class RequestMeetController extends Controller
         return [
             'guest_name' => 'required|string|max:255',
             'requested_user_id'=>'exists:users,id|nullable',
-            'guest_need'=> 'required|string|max:255',
+            'guest_need'=> 'string|max:255|nullable',
         ];
     }
 
