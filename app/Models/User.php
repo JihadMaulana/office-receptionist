@@ -2,15 +2,22 @@
 
 namespace App\Models;
 
+use Atnic\LaravelGenerator\Traits\HasExtendedAttributes;
+use Atnic\LaravelGenerator\Traits\ResolveRouteBindingWithFilter;
+use Atnic\LaravelGenerator\Traits\SetterGetterExtendedAttribute;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Smartisan\Filters\Traits\Filterable;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Filterable, HasExtendedAttributes, ResolveRouteBindingWithFilter, SetterGetterExtendedAttribute;
+
+    protected $filters = 'App\Filters\UserFilter';
 
     /**
      * The attributes that are mass assignable.
@@ -43,9 +50,9 @@ class User extends Authenticatable
     ];
 
     public function division(){
-    return $this->belongsTo(Division::Class)
+    return $this->belongsTo(Division::Class);
     }
     public function guest_request(){
-        return $this->hasMany(GuestRequest::Class)
+        return $this->hasMany(GuestRequest::Class);
     }
 }

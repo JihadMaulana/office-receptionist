@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Filters;
+
+/**
+ * DivisionFilter Filter
+ */
+class UserFilter extends BaseFilter
+{
+    /**
+     * Findable Field,
+     * Find exact value at column, ex: [ 'id', 'user_id' ]
+     * Example usage: &find=id:1,2,3,4 or id=1,2,3,4
+     * @var array
+     */
+    protected $findables = [
+        'id'
+    ];
+
+    /**
+     * Searchable Field,
+     * support relation also, ex: [ 'name', 'posts' => [ 'title' ] ]
+     * @var array
+     */
+    protected $searchables = [
+        'name'
+    ];
+
+    /**
+     * Sortables Field
+     * support relation but belongsTo morhpTo hasOne morphOne only, ex: [ 'id', 'name', 'role.name' ]
+     * @var array
+     */
+    protected $sortables = [
+        'id',
+        'name',
+        'created_at',
+        'updated_at'
+    ];
+
+    /**
+     * Default Sort, null if no default, ex: 'name,asc'
+     * @var string|null
+     */
+    protected $default_sort = null;
+
+    /**
+     * Default per page, null if using default per page of model, ex: 20
+     * @var int|null
+     */
+    protected $default_per_page = null;
+}

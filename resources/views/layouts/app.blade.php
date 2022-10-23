@@ -79,5 +79,38 @@
             @yield('content')
         </main>
     </div>
+
+    @if(config('services.onesignal.app_id'))
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+            window.OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                    appId: '{{ config('services.onesignal.app_id') }}',
+                    safari_web_id: "web.onesignal.auto.6a13c381-7602-4e1d-b2a0-1098f769d9cc",
+                    notifyButton: {
+                        enable: true,
+                    },
+                    allowLocalhostAsSecureOrigin: true,
+                });
+            });
+        </script>
+{{--        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>--}}
+{{--        <script>--}}
+{{--            window.OneSignal = window.OneSignal || [];--}}
+{{--            OneSignal.push(function () {--}}
+{{--                OneSignal.init({--}}
+{{--                    appId: '{{ config('services.onesignal.app_id') }}',--}}
+{{--                });--}}
+{{--                @auth--}}
+{{--                OneSignal.sendTags({--}}
+{{--                    user_id: @json(auth()->id()),--}}
+{{--                    user_role: @json(auth()->user()->role ? auth()->user()->role->display_name : '-'),--}}
+{{--                    user_subscription: @json(auth()->user()->subscription_type ? auth()->user()->subscription_type->name : '-')--}}
+{{--                });--}}
+{{--                @endauth--}}
+{{--            });--}}
+{{--        </script>--}}
+    @endif
 </body>
 </html>
