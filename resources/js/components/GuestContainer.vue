@@ -170,7 +170,7 @@ export default {
     name: "GuestContainer",
     data(){
         return{
-            step: 4,
+            step: 1,
             guestName: null,
             selectedEmployee: null,
             searchEmployeeKeyword: null,
