@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::apiResource('divisions', 'App\Http\Controllers\Api\DivisionController', [ 'as' => 'api' ]);
 Route::apiResource('guest_requests', 'App\Http\Controllers\Api\GuestRequestController', [ 'as' => 'api' ]);
+Route::get('search_employee', 'App\Http\Controllers\Api\SearchEmployeeController')->name('api.search_employee');
+Route::post('request_meet', 'App\Http\Controllers\RequestMeetController')->name('request_meet');

@@ -38,6 +38,6 @@ class Division extends BaseModel
 
     // TODO: Define other default value and relations
     public function user(){
-    return $this->belongsTo(User::Class);
+        return $this->belongsTo(User::Class);
     }
 }

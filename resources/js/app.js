@@ -5,8 +5,23 @@
  */
 
 require('./bootstrap');
+import ElementUI from 'element-ui';
 
 window.Vue = require('vue').default;
+
+Vue.use(ElementUI);
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+/* import specific icons */
+// import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+/* add icons to the library */
+library.add(fas)
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,7 +35,10 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('guest-container', require('./components/GuestContainer.vue').default);
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+Vue.config.productionTip = false
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

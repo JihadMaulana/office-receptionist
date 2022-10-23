@@ -15,7 +15,7 @@ class CreateGuestRequestsTable extends Migration
     {
         Schema::create('guest_requests', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('requested_user_id');
+            $table->unsignedBigInteger('requested_user_id')->nullable();
             $table->string('guest_name');
             $table->string('guest_need');
             $table->text('servings')->nullable();
