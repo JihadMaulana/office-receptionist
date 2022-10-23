@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container"style="position: relative">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+        <div class="col-md-8"style="background-color: #409EFF">
+            <div class="card"style="border-color: #409EFF">
+                <div class="card-header"style="background-color: #409EFF;color: white;text-align: center;font-size: 20px;border-color: #409EFF">{{ __('Login DIST Now!') }}</div>
 
-                <div class="card-body">
+                <div class="card-body"style="background-color: #409EFF;border-color: #409EFF">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                        <div class="row mb-3", style="text-align: center">
+                            <label for="email" style="color: white">{{ __('Email Address') }}</label>
 
-                            <div class="col-md-6">
+                            <div style="width: 50%; margin: auto">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -25,10 +25,11 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
+                        <div class="row mb-3", style="text-align: center">
+                            <label for="password" style="color: white">{{ __('Password') }}</label>
+
+                            <div style="margin: auto;width: 50%">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
@@ -39,8 +40,8 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="row mb-3" style="margin: auto">
+                            <div class="col-md-6 offset-md-3">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -52,18 +53,20 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 offset-md-3" style="position: relative; horiz-align: center">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+<!--                                @if (Route::has('password.request'))-->
+<!--                                    <a class="btn btn-link" href="{{ route('password.request') }}">-->
+<!--                                        {{ __() }}-->
+<!--                                    </a>-->
+<!--                                @endif-->
+
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
